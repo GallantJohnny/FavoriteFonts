@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 10px 20px 0 20px;
+    width: 100%;
+}
+
+main div {
+    width: 23%;
+    height: 180px;
+    margin: 10px;
+    box-sizing: border-box;
+    border-top: 1px rgb(122, 122, 122) solid;
+}
