@@ -1,13 +1,15 @@
-header {
+body>header {
     height: 50px;
     display: flex;
     justify-content: space-between;
+    padding: 0 15px 0 15px;
+    box-sizing: border-box;
     width: 100%;
     border-bottom: 1px rgb(184, 184, 184) solid;
 }
 
 h2 {
-    margin: 12px 0 0 30px;
+    margin-top: 12px;
     font-size: 1.4em;
 }
 
@@ -19,4 +21,14 @@ nav {
 nav a {
     margin-right: 5px;
     text-decoration: none;
+}
+
+@media screen and (max-width: 480px){
+    body>header {
+        display: block;
+    }
+
+    nav {
+        margin-top: 5px;
+    }
 }

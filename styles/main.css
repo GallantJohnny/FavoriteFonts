@@ -2,14 +2,65 @@ main {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 10px 20px 0 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 0 20px 0 20px;
     width: 100%;
 }
 
-main div {
-    width: 23%;
-    height: 180px;
-    margin: 10px;
+main .outer-font-container {
     box-sizing: border-box;
-    border-top: 1px rgb(122, 122, 122) solid;
+    width: 25%;
+    height: 230px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.inner-font-container {
+    border-top: 1px grey solid;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.inner-font-container>header {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.inner-font-container p {
+    font-size: 0.9em;
+}
+
+.inner-font-container p:nth-child(2) {
+    margin-top: 5px;
+    color: rgb(92, 92, 92);
+}
+
+.inner-font-container>header>img {
+    height: 18px;
+    width: 18px;
+}
+
+.inner-font-container>section {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 720px ) {
+    main .outer-font-container {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 550px ) {
+    main .outer-font-container {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px ) {
+    main .outer-font-container {
+        width: 100%;
+    }
 }

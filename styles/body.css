@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+.light-theme {
+    background-color: #fff;
+}
+
+.dark-theme {
+    background-color: #000;
+}
+
+footer {
+    font-size: 0.6em;
+    text-align: center;
+    color:  grey;
+    margin-bottom: 10px;
+}

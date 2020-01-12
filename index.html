@@ -4,10 +4,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- CSS Reset -->
     <link type="text/css" rel="stylesheet" href="styles/reset.css">
+
+    <link type="text/css" rel="stylesheet" href="styles/body.css">
     <link type="text/css" rel="stylesheet" href="styles/header.css">
     <link type="text/css" rel="stylesheet" href="styles/text.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
+    <link type="text/css" rel="stylesheet" href="styles/settings-bar.css">
 </head>
 
 <body>
@@ -20,16 +24,36 @@
             <a class="light-gray sans-family" href="/">ABOUT</a>
         </nav>
     </header>
+    <section>
+        <div>
+            <input id="search-font" placeholder="Search fonts" type="text">
+            <input class="no-display-480" id="example-text" placeholder="Type something" type="text">
+            <div>
+                <div class="no-display-480" id="font-size-toggle">
+                    32px
+                    <div id="font-size-popup">
+                        <p>46px</p>
+                        <p>38px</p>
+                        <p>32px</p>
+                        <p>26px</p>
+                    </div>
+                </div>
+                <div id="theme-toggle" onclick="onThemeToggle()">
+                    <div id="dark-theme"></div>
+                    <div id="light-theme"></div>
+                </div>
+                <div class="no-display-480" id="grid-toggle">
+                    <img src="resources/svg/list.svg">
+                </div>
+                <div id="reset-input">
+                    <img src="resources/svg/return.svg">
+                </div>
+            </div>
+        </div>
+    </section>
     <main>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
     </main>
+    <footer></footer>
 </body>
-
+<script src="script/script.js"></script>
 </html>
