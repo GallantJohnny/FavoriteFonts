@@ -21,6 +21,7 @@ fillFooter();
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
+document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
 
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
