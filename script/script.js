@@ -18,6 +18,7 @@ const fonts = [
 
 renderFontElements(fonts);
 fillFooter();
+displayTick('32px');
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
@@ -120,4 +121,9 @@ function fillFooter(){
 
 function displayFontSizeSettings(){
     document.getElementById('font-size-popup').style.display = 'block';
+}
+
+function displayTick(elementID){
+    document.getElementById(elementID).style.display = 'block';
+    document.getElementById(elementID).src = 'resources/svg/tick.svg';
 }
