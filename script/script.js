@@ -21,6 +21,7 @@ fillFooter();
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
+document.getElementById('grid-toggle').addEventListener('click', onOverlyToggle);
 
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
@@ -40,7 +41,7 @@ function createElement(fontName, author, exmapleValue) {
     const addButtonImg = document.createElement('img');
     const section = document.createElement('section');
 
-    outerContainer.className = 'outer-font-container';
+    outerContainer.className = 'outer-font-container outer-font-container-grid';
     innerContainer.className = 'inner-font-container';
 
     fontNameContainer.className = 'font-name';
@@ -67,10 +68,28 @@ function createElement(fontName, author, exmapleValue) {
     return outerContainer;
 };
 
-function onExampleInputChanged(letter) {
+function onOverlyToggle() {
+    const fontElements = document.getElementsByClassName('outer-font-container');
+
+    for (let i = 0; i < fontElements.length; i++) {
+        if (fontElements[0].className === 'outer-font-container outer-font-container-grid') {
+            for (let i = 0; i < fontElements.length; i++) {
+                fontElements[i].className = 'outer-font-container outer-font-container-list';
+            }
+            //document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+        } else {
+            for (let i = 0; i < fontElements.length; i++) {
+                fontElements[i].className = 'outer-font-container outer-font-container-grid';
+            }
+            //document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+        }
+    }
+};
+
+function onExampleInputChanged() {
     const numberOfExamples = document.getElementsByClassName('example-text').length;
 
-    for(let i = 0; i < numberOfExamples; i++){
+    for (let i = 0; i < numberOfExamples; i++) {
         const value = document.getElementById('example-text').value;
         const fontName = document.getElementsByClassName('font-name')[i].textContent;
 
@@ -90,6 +109,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#fff';
         document.getElementById('example-text').style.backgroundColor = '#000';
         changeFontElementsColor('#fff');
+        document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+        document.getElementById('reset-img').src = 'resources/svg/reset_light.svg';
     } else {
         body.className = 'white-theme';
         document.getElementById('font-size-toggle').style.color = '#000';
@@ -98,6 +119,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#000';
         document.getElementById('example-text').style.backgroundColor = '#fff';
         changeFontElementsColor('#000');
+        document.getElementById('grid-toggle-img').src = 'resources/svg/list_dark.svg';
+        document.getElementById('reset-img').src = 'resources/svg/reset_dark.svg';
     }
 
     document.getElementById('search-font').style
@@ -113,10 +136,10 @@ function changeFontElementsColor(color) {
     }
 };
 
-function fillFooter(){
+function fillFooter() {
     document.getElementsByTagName('footer')[0].textContent = 'Created by GallantJohny | ' + new Date().getFullYear() + ' | Chingu Solo Project'
 }
 
-function displayFontSizeSettings(){
+function displayFontSizeSettings() {
     document.getElementById('font-size-popup').style.display = 'block';
 }

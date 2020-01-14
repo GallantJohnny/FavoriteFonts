@@ -10,10 +10,16 @@ main {
 
 main .outer-font-container {
     box-sizing: border-box;
-    width: 25%;
     height: 230px;
     padding: 10px;
-    box-sizing: border-box;
+}
+
+main .outer-font-container-list {
+    width: 100%;
+}
+
+main .outer-font-container-grid {
+    width: 25%;
 }
 
 .inner-font-container {
