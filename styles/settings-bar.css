@@ -50,7 +50,7 @@ body>section>div>div>div>img {
 }
 
 #font-size-popup p {
-    margin: 6px 0 6px 0;
+    margin: 4px 40px 4px 10px;
     padding: 5px;
     color: white;
     font-size: 1.4em;
@@ -58,8 +58,20 @@ body>section>div>div>div>img {
     border-radius: 5px;
 }
 
-#font-size-popup p:hover {
- background-color:  rgb(105, 105, 105);
+#font-size-popup div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#font-size-popup div:hover {
+    background-color:  rgb(105, 105, 105);
+}
+
+#font-size-popup img {
+    display: none;
+    height: 27px;
+    width: 27px;
+    margin: 4px 0 4px 0;
 }
 
 #font-size-toggle {

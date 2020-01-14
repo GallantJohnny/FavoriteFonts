@@ -18,10 +18,12 @@ const fonts = [
 
 renderFontElements(fonts);
 fillFooter();
+displayTick('32px');
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
 document.getElementById('grid-toggle').addEventListener('click', onOverlyToggle);
+document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
 
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
@@ -142,4 +144,9 @@ function fillFooter() {
 
 function displayFontSizeSettings() {
     document.getElementById('font-size-popup').style.display = 'block';
+}
+
+function displayTick(elementID){
+    document.getElementById(elementID).style.display = 'block';
+    document.getElementById(elementID).src = 'resources/svg/tick.svg';
 }
