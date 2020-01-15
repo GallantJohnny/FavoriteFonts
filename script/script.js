@@ -111,8 +111,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#fff';
         document.getElementById('example-text').style.backgroundColor = '#000';
         changeFontElementsColor('#fff');
-        document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
-        document.getElementById('reset-img').src = 'resources/svg/reset.svg';
+        //document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
+        //document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     } else {
         body.className = 'white-theme';
         document.getElementById('font-size-toggle').style.color = '#000';
@@ -121,8 +121,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#000';
         document.getElementById('example-text').style.backgroundColor = '#fff';
         changeFontElementsColor('#000');
-        document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
-        document.getElementById('reset-img').src = 'resources/svg/reset.svg';
+        //document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
+        //document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     }
 
     document.getElementById('search-font').style
@@ -146,7 +146,7 @@ function displayFontSizeSettings() {
     document.getElementById('font-size-popup').style.display = 'block';
 }
 
-function displayTick(elementID){
+function displayTick(elementID) {
     document.getElementById(elementID).style.display = 'block';
     document.getElementById(elementID).src = 'resources/svg/tick.svg';
 }
