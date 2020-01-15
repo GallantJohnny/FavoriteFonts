@@ -111,8 +111,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#fff';
         document.getElementById('example-text').style.backgroundColor = '#000';
         changeFontElementsColor('#fff');
-        document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
-        document.getElementById('reset-img').src = 'resources/svg/reset_light.svg';
+        document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
+        document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     } else {
         body.className = 'white-theme';
         document.getElementById('font-size-toggle').style.color = '#000';
@@ -121,8 +121,8 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#000';
         document.getElementById('example-text').style.backgroundColor = '#fff';
         changeFontElementsColor('#000');
-        document.getElementById('grid-toggle-img').src = 'resources/svg/list_dark.svg';
-        document.getElementById('reset-img').src = 'resources/svg/reset_dark.svg';
+        document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
+        document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     }
 
     document.getElementById('search-font').style
