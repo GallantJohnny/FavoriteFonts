@@ -37,6 +37,11 @@ body>section>div>div>div>img {
     margin-left: 50%;
 }
 
+.settings-icon {
+    height: 12px;
+    margin-left: 50%;
+}
+
 #font-size-popup {
     position: relative;
     display: none;
