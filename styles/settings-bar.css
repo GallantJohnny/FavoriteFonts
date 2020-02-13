@@ -33,13 +33,12 @@ body>section>div>div>div {
 }
 
 body>section>div>div>div>img {
+    cursor: pointer;
     height: 12px;
-    margin-left: 50%;
 }
 
 .settings-icon {
     height: 12px;
-    margin-left: 50%;
 }
 
 #font-size-popup {
@@ -104,14 +103,6 @@ body>section>div>div>div>img {
     border: 1px grey solid;
     border-radius: 50%;
 }
-
-/*
-#grid-toggle {
-}
-
-#reset-input {
-}
-*/
 
 @media screen and (max-width: 480px){
     .no-display-480 {

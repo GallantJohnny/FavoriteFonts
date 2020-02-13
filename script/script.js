@@ -22,7 +22,7 @@ displayTick('32px');
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
-document.getElementById('grid-toggle').addEventListener('click', onOverlyToggle);
+document.getElementById('grid-toggle').addEventListener('click', onOverlayToggle);
 document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
 
 function renderFontElements(array) {
@@ -70,7 +70,7 @@ function createElement(fontName, author, exmapleValue) {
     return outerContainer;
 };
 
-function onOverlyToggle() {
+function onOverlayToggle() {
     const fontElements = document.getElementsByClassName('outer-font-container');
 
     for (let i = 0; i < fontElements.length; i++) {
