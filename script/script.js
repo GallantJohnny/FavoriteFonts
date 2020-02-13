@@ -128,15 +128,11 @@ function onThemeToggle() {
     document.getElementById('search-font').style
 }
 
-function getCurrentIconSrc(iconID){
-    let returnVal = [];
+function changeIconsTheme(){
     let regForName = /\w+\.svg/;
     let regForTheme = /_white.svg/;
-
-    let imgSrc = document.getElementById(iconID).src;
-    console.log('[getCurrentIconSrc]: ' + imgSrc);
-    
-    return imgSrc;
+    let listToggleSrc = document.getElementById("grid-toggle").src;
+    let returnIconSrc = document.getElementById("reset-input").src;
 }
 
 function changeFontElementsColor(color) {
