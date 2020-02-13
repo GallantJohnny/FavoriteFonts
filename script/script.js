@@ -128,6 +128,17 @@ function onThemeToggle() {
     document.getElementById('search-font').style
 }
 
+function getCurrentIconSrc(iconID){
+    let returnVal = [];
+    let regForName = /\w+\.svg/;
+    let regForTheme = /_white.svg/;
+
+    let imgSrc = document.getElementById(iconID).src;
+    console.log('[getCurrentIconSrc]: ' + imgSrc);
+    
+    return imgSrc;
+}
+
 function changeFontElementsColor(color) {
     const fontNames = document.getElementsByClassName('font-name');
     const exampleTexts = document.getElementsByClassName('example-text');
