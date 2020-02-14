@@ -78,12 +78,12 @@ function onOverlayToggle() {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-list';
             }
-            //document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+            document.getElementById('grid-toggle-img').src = 'resources/svg/list_white.svg';
         } else {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-grid';
             }
-            //document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+            document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
         }
     }
 };
@@ -111,8 +111,6 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#fff';
         document.getElementById('example-text').style.backgroundColor = '#000';
         changeFontElementsColor('#fff');
-        //document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
-        //document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     } else {
         body.className = 'white-theme';
         document.getElementById('font-size-toggle').style.color = '#000';
@@ -121,18 +119,39 @@ function onThemeToggle() {
         document.getElementById('example-text').style.color = '#000';
         document.getElementById('example-text').style.backgroundColor = '#fff';
         changeFontElementsColor('#000');
-        //document.getElementById('grid-toggle-img').src = 'resources/svg/list.svg';
-        //document.getElementById('reset-img').src = 'resources/svg/reset.svg';
     }
+    changeIconsTheme();
 
     document.getElementById('search-font').style
 }
 
-function changeIconsTheme(){
-    let regForName = /\w+\.svg/;
+function changeIconsTheme() {
+    let regForName = /list.*\.svg/;
     let regForTheme = /_white.svg/;
-    let listToggleSrc = document.getElementById("grid-toggle").src;
-    let returnIconSrc = document.getElementById("reset-input").src;
+    let gridToggleSrc = document.getElementById("grid-toggle-img").src;
+    let returnIconSrc = document.getElementById("reset-input-img").src;
+    let gridToggleIcon = "";
+
+    console.log("[changeIconsTheme] regForTheme test: " + regForTheme.test(gridToggleSrc));
+
+    if (regForName.test(gridToggleSrc)){
+        gridToggleIcon = "list";
+    } else {
+        gridToggleIcon = "squares";
+    }
+
+    if (regForTheme.test(returnIconSrc)) {
+        document.getElementById("grid-toggle-img").src = "resources/svg/" + gridToggleIcon + ".svg";
+        document.getElementById("reset-input-img").src = "resources/svg/reset.svg";
+    } else {
+        document.getElementById("grid-toggle-img").src = "resources/svg/" + gridToggleIcon + "_white.svg";
+        document.getElementById("reset-input-img").src = "resources/svg/reset_white.svg";
+    }
+}
+
+function determineOverlazIcon(){
+    let iconName = "";
+    return iconName;
 }
 
 function changeFontElementsColor(color) {
