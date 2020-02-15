@@ -72,18 +72,19 @@ function createElement(fontName, author, exmapleValue) {
 
 function onOverlayToggle() {
     const fontElements = document.getElementsByClassName('outer-font-container');
+    let iconName = determineOverlayIcon();
 
     for (let i = 0; i < fontElements.length; i++) {
         if (fontElements[0].className === 'outer-font-container outer-font-container-grid') {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-list';
             }
-            document.getElementById('grid-toggle-img').src = 'resources/svg/list_white.svg';
+            
         } else {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-grid';
             }
-            document.getElementById('grid-toggle-img').src = 'resources/svg/list_light.svg';
+            
         }
     }
 };
@@ -149,9 +150,16 @@ function changeIconsTheme() {
     }
 }
 
-function determineOverlazIcon(){
+function determineOverlayIcon(){
     let iconName = "";
-    return iconName;
+    let regForIcon = /\w+\.svg/;
+    let imgSrc = document.getElementById("grid-toggle-img").src;
+
+    iconName = imgSrc.match(regForIcon);
+
+    console.log(iconName[0]);
+
+    return iconName[0];
 }
 
 function changeFontElementsColor(color) {
