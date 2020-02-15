@@ -230,4 +230,9 @@ function onFontClicked(node, nodeList) {
     node.children[2].className = "circle";
 
     changeFontSize(fontSize);
+    changeCurrentFontSize(fontSize);
+}
+
+function changeCurrentFontSize(number) {
+    document.getElementById('current-font-size').innerText = number;
 }
