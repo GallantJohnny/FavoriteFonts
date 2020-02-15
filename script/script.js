@@ -184,6 +184,14 @@ function changeFontElementsColor(color) {
     }
 };
 
+function changeFontSize(size){
+    const exampleTexts = document.getElementsByClassName('example-text');
+
+    for (let i = 0; i < exampleTexts.length; i++) {
+        exampleTexts[i].style.fontSize = size;
+    }
+}
+
 function fillFooter() {
     document.getElementsByTagName('footer')[0].textContent = 'Created by GallantJohny | ' + new Date().getFullYear() + ' | Chingu Solo Project'
 }
@@ -203,6 +211,9 @@ function addEventListenersToFontSelectors() {
 }
 
 function onFontClicked(node, nodeList) {
+    const fontSize = node.children[1].innerText;
+    console.log(fontSize);
+
     for (const child of nodeList) {
         child.children[0].className = "hidden-circle";
         child.children[2].className = "hidden-circle";
@@ -210,4 +221,6 @@ function onFontClicked(node, nodeList) {
 
     node.children[0].className = "circle";
     node.children[2].className = "circle";
+
+    changeFontSize(fontSize);
 }
