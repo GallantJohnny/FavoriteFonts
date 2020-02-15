@@ -41,20 +41,34 @@ body>section>div>div>div>img {
     height: 12px;
 }
 
+.hidden-circle {
+    width: 40px;
+    margin: 10px 14px;
+    background-color: rgb(85, 85, 85);
+    border-radius: 50%;
+}
+
+.circle {
+    width: 40px;
+    margin: 10px 14px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
 #font-size-popup {
     position: relative;
     display: none;
     bottom: 40px;
     right: 50px;
-    height: 140px;
+    height: 112px;
     padding: 10px;
-    width: 140px;
+    width: 120px;
     border-radius: 15px;
     background-color: rgb(85, 85, 85);
 }
 
 #font-size-popup p {
-    margin: 4px 40px 4px 10px;
+    width: 40px;
     padding: 5px;
     color: white;
     font-size: 1.4em;
@@ -63,12 +77,14 @@ body>section>div>div>div>img {
 }
 
 #font-size-popup div {
+    height: 28px;
     display: flex;
     justify-content: flex-end;
 }
 
 #font-size-popup div:hover {
     background-color:  rgb(105, 105, 105);
+    border-radius: 5px;
 }
 
 #font-size-popup img {

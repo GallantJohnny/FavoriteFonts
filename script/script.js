@@ -18,10 +18,9 @@ const fonts = [
 
 renderFontElements(fonts);
 fillFooter();
-displayTick('32px');
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
-document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings);
+document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
 document.getElementById('grid-toggle').addEventListener('click', onOverlayToggle);
 document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
 
@@ -190,10 +189,25 @@ function fillFooter() {
 }
 
 function displayFontSizeSettings() {
+    console.log("[displayFontSizeSettings]");
     document.getElementById('font-size-popup').style.display = 'block';
+    addEventListenersToFontSelectors();
 }
 
-function displayTick(elementID) {
-    document.getElementById(elementID).style.display = 'block';
-    document.getElementById(elementID).src = 'resources/svg/tick.svg';
+function addEventListenersToFontSelectors() {
+    let popupChildren = document.getElementById("font-size-popup").children;
+
+    for (const node of popupChildren) {
+        node.addEventListener('click', () => onFontClicked(node, popupChildren), false);
+    }
+}
+
+function onFontClicked(node, nodeList) {
+    for (const child of nodeList) {
+        child.children[0].className = "hidden-circle";
+        child.children[2].className = "hidden-circle";
+    }
+
+    node.children[0].className = "circle";
+    node.children[2].className = "circle";
 }
