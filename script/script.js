@@ -72,19 +72,20 @@ function createElement(fontName, author, exmapleValue) {
 
 function onOverlayToggle() {
     const fontElements = document.getElementsByClassName('outer-font-container');
-    let iconName = determineOverlayIcon();
+
+    changeIconOnOverlayToggle();
 
     for (let i = 0; i < fontElements.length; i++) {
         if (fontElements[0].className === 'outer-font-container outer-font-container-grid') {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-list';
             }
-            
+
         } else {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-grid';
             }
-            
+
         }
     }
 };
@@ -133,9 +134,7 @@ function changeIconsTheme() {
     let returnIconSrc = document.getElementById("reset-input-img").src;
     let gridToggleIcon = "";
 
-    console.log("[changeIconsTheme] regForTheme test: " + regForTheme.test(gridToggleSrc));
-
-    if (regForName.test(gridToggleSrc)){
+    if (regForName.test(gridToggleSrc)) {
         gridToggleIcon = "list";
     } else {
         gridToggleIcon = "squares";
@@ -150,16 +149,30 @@ function changeIconsTheme() {
     }
 }
 
-function determineOverlayIcon(){
+function determineOverlayIcon() {
     let iconName = "";
     let regForIcon = /\w+\.svg/;
     let imgSrc = document.getElementById("grid-toggle-img").src;
 
     iconName = imgSrc.match(regForIcon);
 
-    console.log(iconName[0]);
-
     return iconName[0];
+}
+
+function changeIconOnOverlayToggle() {
+    let iconName = determineOverlayIcon();
+    let regForTheme = /_white.svg/;
+    let isWhiteTheme = regForTheme.test(iconName);
+    let whiteString = isWhiteTheme ? "_white" : "";
+    let newIconName = "";
+
+    if (isWhiteTheme) {
+        newIconName = iconName.slice(0, -10) === "list" ? "squares" : "list";
+    } else {
+        newIconName = iconName === "list.svg" ? "squares" : "list";
+    }
+
+    document.getElementById("grid-toggle-img").src = "resources/svg/" + newIconName + whiteString + ".svg";
 }
 
 function changeFontElementsColor(color) {
