@@ -184,7 +184,7 @@ function changeFontElementsColor(color) {
     }
 };
 
-function changeFontSize(size){
+function changeFontSize(size) {
     const exampleTexts = document.getElementsByClassName('example-text');
 
     for (let i = 0; i < exampleTexts.length; i++) {
@@ -197,9 +197,16 @@ function fillFooter() {
 }
 
 function displayFontSizeSettings() {
-    console.log("[displayFontSizeSettings]");
+    document.getElementById('backdrop').addEventListener('click', closeFontSelector, { once: true });
+    document.getElementById('backdrop').className = 'backdrop';
     document.getElementById('font-size-popup').style.display = 'block';
     addEventListenersToFontSelectors();
+}
+
+function closeFontSelector(){
+    document.getElementById('backdrop').className = 'hide-backdrop';
+    document.getElementById('font-size-popup').style.display = 'none';
+    document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
 }
 
 function addEventListenersToFontSelectors() {

@@ -17,3 +17,15 @@ footer {
     color:  grey;
     margin-bottom: 10px;
 }
+
+.backdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 50;
+}
+
+.hide-backdrop {
+    display: none;
+}

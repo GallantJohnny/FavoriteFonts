@@ -65,6 +65,7 @@ body>section>div>div>div>img {
     width: 120px;
     border-radius: 15px;
     background-color: rgb(85, 85, 85);
+    z-index: 100;
 }
 
 #font-size-popup p {
