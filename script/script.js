@@ -89,6 +89,18 @@ document.getElementById('font-size-toggle').addEventListener('click', displayFon
 document.getElementById('grid-toggle').addEventListener('click', onOverlayToggle);
 document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
 document.getElementById('reset-input').addEventListener('click', onResetInputClicked);
+document.getElementById('back-to-top').addEventListener('click', smoothScroll);
+window.addEventListener('scroll', displayBackToTopBtn);
+
+function smoothScroll() {
+    let i = window.scrollY;
+    console.log(i)
+    let int = setInterval(function () {
+        window.scrollTo(0, i);
+        i -= 10;
+        if (i <= 0) clearInterval(int);
+    }, 1);
+}
 
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
@@ -270,7 +282,7 @@ function displayFontSizeSettings() {
     addEventListenersToFontSelectors();
 }
 
-function closeFontSelector(){
+function closeFontSelector() {
     document.getElementById('backdrop').className = 'hide-backdrop';
     document.getElementById('font-size-popup').style.display = 'none';
     document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
@@ -303,7 +315,16 @@ function changeCurrentFontSize(number) {
     document.getElementById('current-font-size').innerText = number;
 }
 
-function onResetInputClicked(){
+function onResetInputClicked() {
     document.getElementById("example-text").value = "";
     onExampleInputChanged();
+}
+
+function displayBackToTopBtn() {
+    console.log(window.scrollY);
+    if (window.scrollY >= 120) {
+        document.getElementById('back-to-top').style.display = "block";
+    } else {
+        document.getElementById('back-to-top').style.display = "none";
+    }
 }

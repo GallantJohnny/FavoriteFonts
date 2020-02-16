@@ -29,3 +29,24 @@ footer {
 .hide-backdrop {
     display: none;
 }
+
+#back-to-top {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    cursor: pointer;
+    background-color: rgb(92, 92, 92);
+    box-shadow: 0 0 5px 1px rgb(192, 191, 191);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+#back-to-top img {
+    height: 100%;
+}
