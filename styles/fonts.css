@@ -7,13 +7,65 @@
 }
 
 .roboto {
-
+    font-family: 'Roboto', sans-serif;
 }
 
-.openSans {
-
+.tomorrow {
+    font-family: 'Tomorrow', sans-serif;
 }
 
-.robotoCondensed {
-    
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.codaCaption {
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.indieFlower {
+    font-family: 'Indie Flower', cursive;
+}
+
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+.sourceCodePro {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.modak {
+    font-family: 'Modak', cursive;
+}
+
+.abrilFatface {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.kanit {
+    font-family: 'Kanit', sans-serif;
+}
+
+.righteous {
+    font-family: 'Righteous', cursive;
+}
+
+.koronaOne {
+    font-family: 'Krona One', sans-serif;
+}
+
+.patuaOne {
+    font-family: 'Patua One', cursive;
+}
+
+.permanentMaker {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.caveat {
+    font-family: 'Caveat', cursive;
 }

@@ -1,18 +1,83 @@
 const fonts = [
     {
-        fontName: 'Roboto',
-        author: 'Christian Robertson',
-        exmapleValue: 'Roboto'
+        name: "Roboto",
+        author: "Christian Robertson",
+        class: "roboto"
     },
     {
-        fontName: 'Open Sans',
-        author: 'Sans Tyler',
-        exmapleValue: 'Open Sans'
+        name: "Tomorrow",
+        author: "Tony de Marco, Monica Rizzoli",
+        class: "tomorrow"
     },
     {
-        fontName: 'Roboto Condensed',
-        author: 'Christian Robertson',
-        exmapleValue: 'Roboto Condensed'
+        name: "Oswald",
+        author: "Vernon Adams, Kalapi Gajjar, Cyreal",
+        class: "oswald"
+    },
+    {
+        name: "Coda Caption",
+        author: "_AUTHOR_",
+        class: "codaCaption"
+    },
+    {
+        name: "Indie Flower",
+        author: "_AUTHOR_",
+        class: "indieFlower"
+    },
+    {
+        name: "Lobster",
+        author: "_AUTHOR_",
+        class: "lobster"
+    },
+    {
+        name: "Pacifico",
+        author: "_AUTHOR_",
+        class: "pacifico"
+    },
+    {
+        name: "Source Code Pro",
+        author: "_AUTHOR_",
+        class: "sourceCodePro"
+    },
+    {
+        name: "Modak",
+        author: "_AUTHOR_",
+        class: "modak"
+    },
+    {
+        name: "Abril Fatface",
+        author: "_AUTHOR_",
+        class: "abrilFatface"
+    },
+    {
+        name: "Kanit",
+        author: "_AUTHOR_",
+        class: "kanit"
+    },
+    {
+        name: "Righteous",
+        author: "_AUTHOR_",
+        class: "righteous"
+    },
+    {
+        name: "Krona One",
+        author: "_AUTHOR_",
+        class: "koronaOne"
+    },
+    {
+        name: "Patua One",
+        author: "_AUTHOR_",
+        class: "patuaOne"
+    },
+    {
+        name: "Permanent Marker",
+        author: "_AUTHOR_",
+        class: "permanentMaker"
+    },
+    {
+        name: "Caveat",
+        author: "_AUTHOR_",
+        class: "caveat"
     }
 ];
 
@@ -27,12 +92,12 @@ document.getElementById('theme-toggle').addEventListener('click', onThemeToggle)
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
         document.getElementsByTagName('main')[0].appendChild(
-            createElement(array[i].fontName, array[i].author, array[i].exmapleValue)
+            createElement(array[i].name, array[i].author, array[i].class)
         );
     }
 }
 
-function createElement(fontName, author, exmapleValue) {
+function createElement(fontName, author, fontClass) {
     const outerContainer = document.createElement('div');
     const innerContainer = document.createElement('div');
     const header = document.createElement('header');
@@ -43,7 +108,7 @@ function createElement(fontName, author, exmapleValue) {
     const section = document.createElement('section');
 
     outerContainer.className = 'outer-font-container outer-font-container-grid';
-    innerContainer.className = 'inner-font-container';
+    innerContainer.className = 'inner-font-container ' + fontClass;
 
     fontNameContainer.className = 'font-name';
     section.className = 'example-text';
@@ -51,7 +116,7 @@ function createElement(fontName, author, exmapleValue) {
     fontNameContainer.textContent = fontName;
     authorContainer.textContent = author;
 
-    section.textContent = exmapleValue;
+    section.textContent = fontName;
 
     addButtonImg.src = 'resources/svg/add.svg';
 
@@ -71,11 +136,13 @@ function createElement(fontName, author, exmapleValue) {
 
 function onOverlayToggle() {
     const fontElements = document.getElementsByClassName('outer-font-container');
+    const isGrid = /grid/.test(fontElements[0].className);
+    console.log(isGrid);
 
     changeIconOnOverlayToggle();
 
     for (let i = 0; i < fontElements.length; i++) {
-        if (fontElements[0].className === 'outer-font-container outer-font-container-grid') {
+        if (isGrid) {
             for (let i = 0; i < fontElements.length; i++) {
                 fontElements[i].className = 'outer-font-container outer-font-container-list';
             }
