@@ -109,10 +109,10 @@ function createElement(fontName, author, fontClass) {
     const section = document.createElement('section');
 
     outerContainer.className = 'outer-font-container outer-font-container-grid';
-    innerContainer.className = 'inner-font-container ' + fontClass;
+    innerContainer.className = 'inner-font-container';
 
     fontNameContainer.className = 'font-name';
-    section.className = 'example-text';
+    section.className = 'example-text ' + fontClass;
 
     fontNameContainer.textContent = fontName;
     authorContainer.textContent = author;
