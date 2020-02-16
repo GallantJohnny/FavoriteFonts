@@ -14,10 +14,6 @@ main .outer-font-container {
     padding: 10px;
 }
 
-main .outer-font-container-list {
-    width: 100%;
-}
-
 main .outer-font-container-grid {
     width: 25%;
 }
@@ -70,4 +66,8 @@ main .outer-font-container-grid {
     main .outer-font-container {
         width: 100%;
     }
+}
+
+main .outer-font-container-list {
+    width: 100%;
 }
