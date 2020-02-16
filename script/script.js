@@ -138,7 +138,6 @@ function createElement(fontName, author, fontClass) {
 function onOverlayToggle() {
     const fontElements = document.getElementsByClassName('outer-font-container');
     const isGrid = /grid/.test(fontElements[0].className);
-    console.log(isGrid);
 
     changeIconOnOverlayToggle();
 
@@ -287,7 +286,6 @@ function addEventListenersToFontSelectors() {
 
 function onFontClicked(node, nodeList) {
     const fontSize = node.children[1].innerText;
-    console.log(fontSize);
 
     for (const child of nodeList) {
         child.children[0].className = "hidden-circle";
