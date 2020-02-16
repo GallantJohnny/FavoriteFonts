@@ -94,8 +94,7 @@ window.addEventListener('scroll', displayBackToTopBtn);
 
 function smoothScroll() {
     let i = window.scrollY;
-    console.log(i)
-    let int = setInterval(function () {
+    let int = setInterval(() => {
         window.scrollTo(0, i);
         i -= 10;
         if (i <= 0) clearInterval(int);
@@ -321,7 +320,6 @@ function onResetInputClicked() {
 }
 
 function displayBackToTopBtn() {
-    console.log(window.scrollY);
     if (window.scrollY >= 120) {
         document.getElementById('back-to-top').style.display = "block";
     } else {
