@@ -16,67 +16,67 @@ const fonts = [
     },
     {
         name: "Coda Caption",
-        author: "_AUTHOR_",
+        author: "Vernon Adams",
         class: "codaCaption"
     },
     {
         name: "Indie Flower",
-        author: "_AUTHOR_",
+        author: "Kimberly Geswein",
         class: "indieFlower"
     },
     {
         name: "Lobster",
-        author: "_AUTHOR_",
+        author: "Impallari Type",
         class: "lobster"
     },
     {
         name: "Pacifico",
-        author: "_AUTHOR_",
+        author: "Vernon Adams, Jacques Le Bailly, Botjo Nikoltchev, Ani Petrova",
         class: "pacifico"
     },
     {
         name: "Source Code Pro",
-        author: "_AUTHOR_",
+        author: "Paul D. Hunt",
         class: "sourceCodePro"
     },
     {
         name: "Modak",
-        author: "_AUTHOR_",
+        author: "Ek Type",
         class: "modak"
     },
     {
         name: "Abril Fatface",
-        author: "_AUTHOR_",
+        author: "Type Together",
         class: "abrilFatface"
     },
     {
         name: "Kanit",
-        author: "_AUTHOR_",
+        author: "Cadson Demak",
         class: "kanit"
     },
     {
         name: "Righteous",
-        author: "_AUTHOR_",
+        author: "Astigmatic",
         class: "righteous"
     },
     {
         name: "Krona One",
-        author: "_AUTHOR_",
+        author: "Yvonne Schütler",
         class: "koronaOne"
     },
     {
         name: "Patua One",
-        author: "_AUTHOR_",
+        author: "Latino Type",
         class: "patuaOne"
     },
     {
         name: "Permanent Marker",
-        author: "_AUTHOR_",
+        author: "Font Diner",
         class: "permanentMaker"
     },
     {
         name: "Caveat",
-        author: "_AUTHOR_",
+        author: "Impallari Type, Cyreal",
         class: "caveat"
     }
 ];
@@ -88,6 +88,7 @@ document.getElementById('example-text').addEventListener('keyup', onExampleInput
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
 document.getElementById('grid-toggle').addEventListener('click', onOverlayToggle);
 document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
+document.getElementById('reset-input').addEventListener('click', onResetInputClicked);
 
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
@@ -302,4 +303,9 @@ function onFontClicked(node, nodeList) {
 
 function changeCurrentFontSize(number) {
     document.getElementById('current-font-size').innerText = number;
+}
+
+function onResetInputClicked(){
+    document.getElementById("example-text").value = "";
+    onExampleInputChanged();
 }
