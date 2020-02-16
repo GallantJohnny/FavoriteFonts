@@ -83,6 +83,7 @@ const fonts = [
 
 renderFontElements(fonts);
 fillFooter();
+hideBackToTopBtn();
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
@@ -317,6 +318,10 @@ function changeCurrentFontSize(number) {
 function onResetInputClicked() {
     document.getElementById("example-text").value = "";
     onExampleInputChanged();
+}
+
+function hideBackToTopBtn(){
+    document.getElementById('back-to-top').style.display = "none";
 }
 
 function displayBackToTopBtn() {
