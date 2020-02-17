@@ -344,7 +344,6 @@ function changeCurrentFontSize(number) {
 function onResetInputClicked() {
     document.getElementById("example-text").value = "";
     onExampleInputChanged();
-    removeFontElements();
 }
 
 function hideBackToTopBtn(){
