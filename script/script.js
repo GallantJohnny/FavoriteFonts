@@ -106,7 +106,7 @@ function smoothScroll() {
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
         document.getElementsByTagName('main')[0].appendChild(
-            createElement(i, array[i].name, array[i].author, array[i].class)
+            createElement(array[i].name, array[i].author, array[i].class)
         );
     }
 }
@@ -123,7 +123,7 @@ function removeFontElements(){
     }
 }
 
-function createElement(id, fontName, author, fontClass) {
+function createElement(fontName, author, fontClass) {
     const outerContainer = document.createElement('div');
     const innerContainer = document.createElement('div');
     const header = document.createElement('header');
@@ -133,7 +133,6 @@ function createElement(id, fontName, author, fontClass) {
     const addButtonImg = document.createElement('img');
     const section = document.createElement('section');
 
-    outerContainer.id = id;
     outerContainer.className = 'outer-font-container outer-font-container-grid';
     innerContainer.className = 'inner-font-container';
 
