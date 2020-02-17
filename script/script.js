@@ -114,12 +114,9 @@ function renderFontElements(array) {
 function removeFontElements(){
     console.log("removeFontElements");
     const parent = document.getElementsByTagName('main')[0];
-    const children = document.getElementsByClassName('outer-font-container');
     console.log(parent);
-    for (let i = 0; i < children.length; i++){
-        let child = children[i];
-        console.log(child);
-        parent.removeChild(child);
+    while (parent.firstChild){
+        parent.removeChild(parent.lastChild);
     }
 }
 
@@ -347,6 +344,7 @@ function changeCurrentFontSize(number) {
 function onResetInputClicked() {
     document.getElementById("example-text").value = "";
     onExampleInputChanged();
+    removeFontElements();
 }
 
 function hideBackToTopBtn(){
