@@ -86,6 +86,7 @@ fillFooter();
 hideBackToTopBtn();
 
 document.getElementById('example-text').addEventListener('keyup', onExampleInputChanged);
+document.getElementById('search-font').addEventListener('keyup', onSearchInputChanged);
 document.getElementById('font-size-toggle').addEventListener('click', displayFontSizeSettings, { once: true });
 document.getElementById('grid-toggle').addEventListener('click', onOverlayToggle);
 document.getElementById('theme-toggle').addEventListener('click', onThemeToggle);
@@ -105,12 +106,24 @@ function smoothScroll() {
 function renderFontElements(array) {
     for (let i = 0; i < array.length; i++) {
         document.getElementsByTagName('main')[0].appendChild(
-            createElement(array[i].name, array[i].author, array[i].class)
+            createElement(i, array[i].name, array[i].author, array[i].class)
         );
     }
 }
 
-function createElement(fontName, author, fontClass) {
+function removeFontElements(){
+    console.log("removeFontElements");
+    const parent = document.getElementsByTagName('main')[0];
+    const children = document.getElementsByClassName('outer-font-container');
+    console.log(parent);
+    for (let i = 0; i < children.length; i++){
+        let child = children[i];
+        console.log(child);
+        parent.removeChild(child);
+    }
+}
+
+function createElement(id, fontName, author, fontClass) {
     const outerContainer = document.createElement('div');
     const innerContainer = document.createElement('div');
     const header = document.createElement('header');
@@ -120,6 +133,7 @@ function createElement(fontName, author, fontClass) {
     const addButtonImg = document.createElement('img');
     const section = document.createElement('section');
 
+    outerContainer.id = id;
     outerContainer.className = 'outer-font-container outer-font-container-grid';
     innerContainer.className = 'inner-font-container';
 
@@ -172,11 +186,27 @@ function onExampleInputChanged() {
     const numberOfExamples = document.getElementsByClassName('example-text').length;
 
     for (let i = 0; i < numberOfExamples; i++) {
-        const value = document.getElementById('example-text').value;
+        const value = document.getElementById('example-text').value; // this can be outside the loop
         const fontName = document.getElementsByClassName('font-name')[i].textContent;
 
         document.getElementsByClassName('example-text')[i].textContent = value !== '' ? value : fontName;
     }
+}
+
+function onSearchInputChanged() {
+    const value = document.getElementById('search-font').value;
+    const regValue = new RegExp(`${value}`);
+    let matchingFonts = [];
+
+    fonts.forEach(element => {
+        if (regValue.test(element.name)){
+            matchingFonts.push(element)
+        }
+    });
+
+    console.log(matchingFonts);
+    removeFontElements();
+    renderFontElements(value === "" ? fonts : matchingFonts);
 }
 
 function onThemeToggle() {
