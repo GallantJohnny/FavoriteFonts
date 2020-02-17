@@ -191,7 +191,7 @@ function onExampleInputChanged() {
 
 function onSearchInputChanged() {
     const value = document.getElementById('search-font').value;
-    const regValue = new RegExp(`${value}`);
+    const regValue = new RegExp(`${value}`, 'gi');
     let matchingFonts = [];
 
     fonts.forEach(element => {
