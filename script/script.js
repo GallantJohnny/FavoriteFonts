@@ -111,11 +111,11 @@ function renderFontElements(array) {
     }
 }
 
-function removeFontElements(){
+function removeFontElements() {
     console.log("removeFontElements");
     const parent = document.getElementsByTagName('main')[0];
     console.log(parent);
-    while (parent.firstChild){
+    while (parent.firstChild) {
         parent.removeChild(parent.lastChild);
     }
 }
@@ -195,7 +195,7 @@ function onSearchInputChanged() {
     let matchingFonts = [];
 
     fonts.forEach(element => {
-        if (regValue.test(element.name)){
+        if (regValue.test(element.name)) {
             matchingFonts.push(element)
         }
     });
@@ -342,11 +342,18 @@ function changeCurrentFontSize(number) {
 }
 
 function onResetInputClicked() {
+    const inputValue = document.getElementById("search-font").value;
+
+    if (inputValue != "") {
+        document.getElementById("search-font").value = "";
+        onSearchInputChanged();
+    }
+
     document.getElementById("example-text").value = "";
     onExampleInputChanged();
 }
 
-function hideBackToTopBtn(){
+function hideBackToTopBtn() {
     document.getElementById('back-to-top').style.display = "none";
 }
 
