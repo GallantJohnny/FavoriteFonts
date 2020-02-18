@@ -112,9 +112,7 @@ function renderFontElements(array) {
 }
 
 function removeFontElements() {
-    console.log("removeFontElements");
     const parent = document.getElementsByTagName('main')[0];
-    console.log(parent);
     while (parent.firstChild) {
         parent.removeChild(parent.lastChild);
     }
@@ -200,7 +198,6 @@ function onSearchInputChanged() {
         }
     });
 
-    console.log(matchingFonts);
     removeFontElements();
     renderFontElements(value === "" ? fonts : matchingFonts);
 }
