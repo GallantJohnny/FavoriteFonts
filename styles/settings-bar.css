@@ -122,7 +122,7 @@ body>section>div>div>div>img {
 }
 
 @media screen and (max-width: 480px){
-    .no-display-480 {
+    .display-none-480 {
         display: none;
     }
 
