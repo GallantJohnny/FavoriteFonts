@@ -315,10 +315,10 @@ function closeFontSelector() {
 }
 
 function addEventListenersToFontSelectors() {
-    let popupChildren = document.getElementById("font-size-popup").children;
+    let fontSizes = document.getElementById("font-size-popup").children;
 
-    for (const node of popupChildren) {
-        node.addEventListener('click', () => onFontClicked(node, popupChildren), false);
+    for (const node of fontSizes) {
+        node.addEventListener('click', () => onFontClicked(node, fontSizes), false);
     }
 }
 
